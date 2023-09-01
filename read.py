@@ -1,6 +1,7 @@
 #!/user/bin/env python
 
 import RPi.GPIO as GPIO
+import time
 from mfrc522 import SimpleMFRC522
 
 reader = SimpleMFRC522()
@@ -17,4 +18,4 @@ while i == 1:
             f.write('\n')
     finally:
         GPIO.cleanup()
-    time.sleep()
+    time.sleep(2)
