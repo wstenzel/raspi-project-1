@@ -9,5 +9,8 @@ try:
     id, text = reader.read()
     print(id)
     print(text)
+    with open('testRFID.txt','a') as f:
+        f.write(text)
+        f.write('\n')
 finally:
     GPIO.cleanup()
