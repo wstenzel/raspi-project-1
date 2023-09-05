@@ -16,7 +16,7 @@ while i == 1:
         with open('testRFID.txt','a') as f:
             f.write(text)
             f.write('\n')
-    time.sleep(2)
+    finally:
+        time.sleep(2)
 
-finally:
-        GPIO.cleanup()
+GPIO.cleanup()
