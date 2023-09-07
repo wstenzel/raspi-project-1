@@ -7,34 +7,47 @@ public class console
 
     public static void main(String[] args) throws IOException
     {
-        int[] studentIdArray = new int[5];
-        RandomAccessFile rawData = new RandomAccessFile("testRFID.txt", "r");
-        rawData.seek(0);
-        studentIdArray[0] = rawData.read();
-        rawData.seek(1);
-        studentIdArray[1] = rawData.read();
-        rawData.seek(2);
-        studentIdArray[2] = rawData.read();
-        rawData.seek(3);
-        studentIdArray[3] = rawData.read();
-        rawData.seek(4);
-        studentIdArray[4] = rawData.read();
-        rawData.close();
-        System.out.print(unAscii(studentIdArray));
+        ArrayList<student> students = new ArrayList<>();
+
+        students.add(new student("Will Stenzel",79601));
+        students.add(new student("Special K",78362));
+        students.add(new student("monke",11848));
+        students.add(new student("Linda McShrawn", 80647));
+        
+        File testRFID = new File("testRFID.txt");
+        FileWriter output = new FileWriter("output.txt");
+        Scanner scan = new Scanner(testRFID);
+        int id1;
+        String in;
+        
+        while(scan.hasNext())
+        {
+            id1 = scan.nextInt();
+            scan.nextLine();
+
+            for(int i = 0; i < students.size(); i++)
+            {
+              if(id1==students.get(i).getID())
+              {
+                
+                if(students.get(i).getPresent())
+                {
+                  in = "IN";
+                }
+                else
+                {
+                  in = "OUT";
+                }
+                output.write(students.get(i).getName() + "\t\t" + students.get(i).getID() + "\t\t" + in);
+                output.write("\n");
+                students.get(i).setPresent();
+              }
+            }
+        }
+        scan.close();
+        output.close();
+        
     }
 
-    private static int unAscii(int[] idArray)
-    {
-        int id = 0;
-        for(int i = 0; i <= idArray.length; i++)
-        {
-            System.out.print(i);
-            int place = idArray[i];
-            place -= 48;
-            int pow = 5-i;
-            Math.pow(place,pow);
-            id += place;
-        }
-        return id;
-    }
+    
 }

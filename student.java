@@ -13,6 +13,11 @@ public class student
         present = 0;
     }
 
+    public void setPresent()
+    {
+        present +=1;
+    }
+
     public boolean getPresent()
     {
         return present % 2 == 0;
