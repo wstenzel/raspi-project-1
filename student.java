@@ -10,7 +10,7 @@ public class student
     {
         name = n;
         studentID = s;
-        present = 1;
+        present = 0;
     }
 
     public boolean getPresent()
