@@ -7,8 +7,8 @@ public class console
 
     public static void main(String[] args) throws IOException
     {
-        RandomAccessFile in = new RandomAccessFile("textRFID.text", "r");
-
-        
+        RandomAccessFile rawData = new RandomAccessFile("textRFID.text", "r");
+        rawData.seek(0);
+        System.out.print(rawData.read());
     }
 }
