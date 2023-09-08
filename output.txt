@@ -1,8 +1,8 @@
-Will Stenzel		79601		IN
-Special K		78362		IN
-monke		11848		IN
-Will Stenzel		79601		OUT
-Linda McShrawn		80647		IN
-Special K		78362		OUT
-Special K		78362		IN
-Will Stenzel		79601		IN
+Will Stenzel       79601		IN
+Special K          78362		IN
+monke              11848		IN
+Will Stenzel       79601		OUT
+Linda McShrawn     80647		IN
+Special K          78362		OUT
+Special K          78362		IN
+Will Stenzel       79601		IN
