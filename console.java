@@ -19,6 +19,8 @@ public class console
         Scanner scan = new Scanner(testRFID);
         int id1;
         String in;
+        String out;
+        int length;
         
         while(scan.hasNext())
         {
@@ -38,7 +40,18 @@ public class console
                 {
                   in = "OUT";
                 }
-                output.write(students.get(i).getName() + "\t\t" + students.get(i).getID() + "\t\t" + in);
+
+                length = students.get(i).getName().length();
+                out = students.get(i).getName();
+
+                for(int j = 0; j < 19-length; j++)
+                {
+                  out+=" ";
+                }
+
+                out+=students.get(i).getID() + "\t\t" + in;
+
+                output.write(out);
                 output.write("\n");
                 students.get(i).setPresent();
               }
